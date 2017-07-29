@@ -16,6 +16,7 @@ UQ
 * Project Page
 * Repo URL
 
+![Task Allocation](https://github.com/nophr/freedomfighters/blob/master/notes/taskalloc.jpg?raw=true)
 
 
 http://freedomfighters.space/testInput.html
