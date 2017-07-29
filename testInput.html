@@ -44,31 +44,53 @@
   </style>
 </head>
 <body>
-  <form>
+  <form method="post" action="inputHandling.php" onkeypress="return event.keyCode != 13;">
     Start Location:<br>
     <div id="locationField">
       <input id="autocomplete" placeholder="Enter your address"
-             onFocus="geolocate()" type="text"></input>
+             onFocus="geolocate()" type="text" name="start"></input>
     </div>
     End Location:<br>
     <div id="locationField">
       <input id="autocomplete1" placeholder="Enter your address"
-             onFocus="geolocate()" type="text"></input>
+             onFocus="geolocate()" type="text" name="end"></input>
     </div>
-    <button onclick="showMap()">Submit</button>
+    <input type="submit" value="Submit" onclick="showMap(); return false;">
   </form>
-  <div id="mapCanvas"></div>
+  <p id="mapCanvas"></p>
 </body>
+<script src="jquery-3.2.1.min.js"></script>
 <script>
+/*
 var apiKey = "AIzaSyBKNst9JE89f4lHuNXQFTUgZKh8VZpvR6M";
-var origin = document.getElementById('autocomplete').value ;
-var destination = document.getElementById('autocomplete1').value;
 
-var source = "https://www.google.com/maps/embed/v1/directions?origin="+origin+"&destination="+destination+"&key="+apiKey;
 function showMap () {
+  var origin = document.getElementById('autocomplete').value ;
+  var destination = document.getElementById('autocomplete1').value;
+
+  var formattedOrigin = origin.replace(/\ /g, '+');
+  var formattedDest = destination.replace(/\ /g, '+');
+
+  console.log(formattedOrigin);
+  console.log(formattedDest);
+
+  $.post( "inputHandling.php", { start: formattedOrigin, end: formattedDest }, function( data ) {
+  console.log( data );
+}, "json"));
+
+  var xmlhttp = new XMLHttpRequest();
+  xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        document.getElementById("mapCanvas").innerHTML = myObj.rows[0].elements[0].distance.text;
+    }
+  };
+  var source = "https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins="+formattedOrigin+"&destinations="+formattedDest+"&key="+apiKey;
   console.log(source);
-  mapCanvas.innerHTML = '<iframe width="600" height="450" frameborder="0" style="border:0" src='+source+' allowfullscreen></iframe>';
-}
+  xmlhttp.open("GET", source, true);
+  xmlhttp.send();
+
+}*/
     // This example displays an address form, using the autocomplete feature
     // of the Google Places API to help users fill in the information.
 
@@ -94,9 +116,6 @@ function showMap () {
           /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
           {types: ['geocode']});
 
-      // When the user selects an address from the dropdown, populate the address
-      // fields in the form.
-      autocomplete.addListener('place_changed', fillInAddress);
     }
     function initAutocomplete1() {
       // Create the autocomplete object, restricting the search to geographical
@@ -105,29 +124,6 @@ function showMap () {
           /** @type {!HTMLInputElement} */(document.getElementById('autocomplete1')),
           {types: ['geocode']});
 
-      // When the user selects an address from the dropdown, populate the address
-      // fields in the form.
-      autocomplete.addListener('place_changed', fillInAddress);
-    }
-
-    function fillInAddress() {
-      // Get the place details from the autocomplete object.
-      var place = autocomplete.getPlace();
-
-      for (var component in componentForm) {
-        document.getElementById(component).value = '';
-        document.getElementById(component).disabled = false;
-      }
-
-      // Get each component of the address from the place details
-      // and fill the corresponding field on the form.
-      for (var i = 0; i < place.address_components.length; i++) {
-        var addressType = place.address_components[i].types[0];
-        if (componentForm[addressType]) {
-          var val = place.address_components[i][componentForm[addressType]];
-          document.getElementById(addressType).value = val;
-        }
-      }
     }
 
     // Bias the autocomplete object to the user's geographical location,
