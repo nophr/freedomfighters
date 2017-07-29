@@ -7,7 +7,7 @@
         position: relative;
         width: 480px;
       }
-      #autocomplete {
+      #autocomplete, #autocomplete1 {
         position: absolute;
         top: 0px;
         left: 0px;
@@ -49,26 +49,106 @@
     <div id="locationField">
       <input id="autocomplete" placeholder="Enter your address"
              onFocus="geolocate()" type="text"></input>
-    </div><button onclick="getLocation()">Get Location</button><br>
+    </div>
     End Location:<br>
     <div id="locationField">
-      <input id="autocomplete" placeholder="Enter your address"
+      <input id="autocomplete1" placeholder="Enter your address"
              onFocus="geolocate()" type="text"></input>
     </div>
+    <button onclick="showMap()">Submit</button>
   </form>
+  <div id="mapCanvas"></div>
 </body>
-  <script>
-  var x = document.getElementById("demo");
-  function getLocation() {
-      if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(showPosition);
-      } else {
-          x.innerHTML = "Geolocation is not supported by this browser.";
+<script>
+var apiKey = "AIzaSyBKNst9JE89f4lHuNXQFTUgZKh8VZpvR6M";
+var origin = document.getElementById('autocomplete').value ;
+var destination = document.getElementById('autocomplete1').value;
+
+var source = "https://www.google.com/maps/embed/v1/directions?origin="+origin+"&destination="+destination+"&key="+apiKey;
+function showMap () {
+  console.log(source);
+  mapCanvas.innerHTML = '<iframe width="600" height="450" frameborder="0" style="border:0" src='+source+' allowfullscreen></iframe>';
+}
+    // This example displays an address form, using the autocomplete feature
+    // of the Google Places API to help users fill in the information.
+
+    // This example requires the Places library. Include the libraries=places
+    // parameter when you first load the API. For example:
+    // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+    var placeSearch, autocomplete;
+    var componentForm = {
+      street_number: 'short_name',
+      route: 'long_name',
+      locality: 'long_name',
+      administrative_area_level_1: 'short_name',
+      country: 'long_name',
+      postal_code: 'short_name'
+    };
+
+    function initAutocomplete() {
+      // Create the autocomplete object, restricting the search to geographical
+      // location types.
+      initAutocomplete1();
+      autocomplete = new google.maps.places.Autocomplete(
+          /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
+          {types: ['geocode']});
+
+      // When the user selects an address from the dropdown, populate the address
+      // fields in the form.
+      autocomplete.addListener('place_changed', fillInAddress);
+    }
+    function initAutocomplete1() {
+      // Create the autocomplete object, restricting the search to geographical
+      // location types.
+      autocomplete = new google.maps.places.Autocomplete(
+          /** @type {!HTMLInputElement} */(document.getElementById('autocomplete1')),
+          {types: ['geocode']});
+
+      // When the user selects an address from the dropdown, populate the address
+      // fields in the form.
+      autocomplete.addListener('place_changed', fillInAddress);
+    }
+
+    function fillInAddress() {
+      // Get the place details from the autocomplete object.
+      var place = autocomplete.getPlace();
+
+      for (var component in componentForm) {
+        document.getElementById(component).value = '';
+        document.getElementById(component).disabled = false;
       }
-  }
-  function showPosition(position) {
-      x.innerHTML = "Latitude: " + position.coords.latitude +
-      "<br>Longitude: " + position.coords.longitude;
-  }
+
+      // Get each component of the address from the place details
+      // and fill the corresponding field on the form.
+      for (var i = 0; i < place.address_components.length; i++) {
+        var addressType = place.address_components[i].types[0];
+        if (componentForm[addressType]) {
+          var val = place.address_components[i][componentForm[addressType]];
+          document.getElementById(addressType).value = val;
+        }
+      }
+    }
+
+    // Bias the autocomplete object to the user's geographical location,
+    // as supplied by the browser's 'navigator.geolocation' object.
+    function geolocate() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          var geolocation = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+          var circle = new google.maps.Circle({
+            center: geolocation,
+            radius: position.coords.accuracy
+          });
+          autocomplete.setBounds(circle.getBounds());
+        });
+      }
+    }
   </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKNst9JE89f4lHuNXQFTUgZKh8VZpvR6M&libraries=places&callback=initAutocomplete"
+      async defer></script>
+
 </html>
