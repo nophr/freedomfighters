@@ -11,10 +11,10 @@ UQ
 
 #### Today
 
-[1] Input/Output
--Nominate Awards
--Project Page
--Repo URL
+* Input/Output
+* Nominate Awards
+* Project Page
+* Repo URL
 
 
 
