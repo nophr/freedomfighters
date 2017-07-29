@@ -1,0 +1,41 @@
+<head>
+<script>
+
+// boxes javascript
+
+var apiKey = "AIzaSyBKNst9JE89f4lHuNXQFTUgZKh8VZpvR6M";
+var startBox = document.getElementsByName("StartBox").value.replace(/ /, +);
+var endBox = document.getElementsByName("EndBox").value.replace(/ /, +);
+var googleRequest = "https://maps.googleapis.com/maps/api/distancematrix/json?units=metric&origins=" + startBox + "&destinations="+ endBox +"&key="+ apiKey
+
+
+function submitPressed(googleRequest) {
+
+	var xmlhttp = new XMLHttpRequest();
+	xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        myObj = JSON.parse(this.responseText);
+        document.getElementById("distance").innerHTML = myObj.rows[0].elements[0].distance.text;
+    	}
+	};
+	
+	xmlhttp.open("GET", googleRequest, true);
+	
+xmlhttp.send();
+
+}
+</script>
+
+</head>
+
+<body>
+	
+	<form>
+	Start <input type="text", name="StartBox", placeholder="Enter an address", onfocus="geolocate()">
+	<br>
+	End <input type="text", name="EndBox", placeholder="Enter an address", onfocus="geolocate()">
+	<button onclick="submitPressed()">Click me</button>
+	</form>
+	<p id= "distance"></p>
+	
+</body>
