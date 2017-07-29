@@ -7,6 +7,8 @@ Bradley
 
 UQ
 
+http://freedomfighters.space/
+
 Bringing Brisbane together
 https://docs.google.com/document/d/1yjgtHG3OgmfUFxTpVZ7UfVSsZVCE0ZEHATbHTr_23qI/edit
 
