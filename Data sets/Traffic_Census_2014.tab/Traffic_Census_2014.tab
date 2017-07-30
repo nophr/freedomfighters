@@ -1,0 +1,19 @@
+!table
+!version 300
+!charset Neutral
+
+Definition Table
+  Type NATIVE Charset "Neutral"
+  Fields 12
+    OBJECTID Integer ;
+    SITE_ID Char (8) ;
+    DESCRIPTION Char (40) ;
+    LONGITUDE Float ;
+    LATITUDE Float ;
+    AADT Float ;
+    TDIST Float ;
+    PERCENT_HV Float ;
+    RSECT_ID Char (4) ;
+    ROAD_NAME Char (40) ;
+    TDIST_STAR Float ;
+    TDIST_END Float ;

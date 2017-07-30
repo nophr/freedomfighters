@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # [Start Bootstrap](http://startbootstrap.com/) - [Bare](http://startbootstrap.com/template-overviews/bare/)
 
 [Bare](http://startbootstrap.com/template-overviews/bare/) is a bare HTML starter template for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/). This template features predefined file paths for Bootstrap and jQuery, so you can quickly create Bootstrap websites.
@@ -25,3 +26,35 @@ Start Bootstrap is based on the [Bootstrap](http://getbootstrap.com/) framework 
 ## Copyright and License
 
 Copyright 2013-2016 Blackrock Digital LLC. Code released under the [MIT](https://github.com/BlackrockDigital/startbootstrap-bare/blob/gh-pages/LICENSE) license.
+=======
+# freedomfighters
+GovHACK 2017
+Chai
+Gabby
+Shalini
+Bradley
+Ed
+
+UQ
+
+
+#### Today
+
+* Input/Output
+* Nominate Awards
+* Project Page
+* Repo URL
+
+![Task Allocation](https://github.com/nophr/freedomfighters/blob/master/notes/taskalloc.jpg?raw=true)
+
+
+http://freedomfighters.space/testInput.html
+
+http://freedomfighters.space/
+
+Bringing Brisbane together
+https://docs.google.com/document/d/1yjgtHG3OgmfUFxTpVZ7UfVSsZVCE0ZEHATbHTr_23qI/edit
+
+Link to view planning doc
+https://1drv.ms/w/s!Am9EXiTuJFXuhOUBBwSmOrp7y1IBZg
+>>>>>>> a4df4209c537a6f6c50388e59f0b912f2ae3956a
