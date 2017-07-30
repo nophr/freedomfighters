@@ -36,7 +36,7 @@ h1,h2,h3,p,label{
 }
 
 /* ------------ Form Styles ------------ */
-#transparent_form{
+.transparent_form{
     color: #FFF;
     background-color: #337BB5;
     border-bottom: 1px;
