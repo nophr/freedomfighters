@@ -8,7 +8,7 @@
     <meta name="description" content="Website created for GovHack 2017">
     <meta name="author" content="Team Freedom Fighters">
 
-    <title>Bare - Start Bootstrap Template</title>
+    <title>Freedom Fighter</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -121,19 +121,21 @@
                     <div class="col-lg-6 col-lg-offset-3 text-center" style="margin-bottom: 15px;">
                     </div>
                     <div class="col-lg-6 col-lg-offset-3 text-center" style="margin-bottom: 305px;">
-                  <button type="submit" class="btn btn-default transparent_form" onclick="showMap(); return false;">Plan my journey</button>
+                  <button type="submit" class="btn btn-default" id="autocomplete" onclick="showMap(); return false;">Plan my journey</button>
                     </div>
                 </form>
             </div>
         </div>
         <div id="mapCanvas">
           <img src="https://media.giphy.com/media/1Ujr5kKotT8SQ/giphy.gif" id="loading-image" style="display: none;"><br>
-          The driving distance is <b><span id="driving_dist"> metres</b> and time is <b><span id="driving_time"> seconds</b>.<br>
+          <!--The driving distance is <b><span id="driving_dist"> metres</b> and time is <b><span id="driving_time"> seconds</b>.<br>
           The cycling distance is <b><span id="cycling_dist"> metres</b> and time is <b><span id="cycling_time"> seconds</b>.<br>
           The walking distance is <b><span id="walking_dist"> metres</b> and time is <b><span id="walking_time"> seconds</b>.<br>
           The bus distance is <b><span id="bus_dist"> metres</b> and time is <b><span id="bus_time"> seconds</b>.<br>
-          The train distance is <b><span id="train_dist"> metres</b> and time is <b><span id="train_time"> seconds</b>.
-          <div id="map"></div>
+          The train distance is <b><span id="train_dist"> metres</b> and time is <b><span id="train_time"> seconds</b>.-->
+          <div class="row">
+            <div id="map"></div>
+            </div>
         </div>
         <!-- /.row -->
         <div class="row">
@@ -144,7 +146,7 @@
                 <p><i>"Would I have saved more money if I took the train instead of driving?"</i></p>
                 <p><i>"How much carbon have I contributed to the environment?"</i></p><br><br>
                 <p>Freedom Fighter empowers you by providing information <br>that could help you save time and the environment</p><br><br>
-                <button type="submit" class="btn btn-default" id="transparent_form">Use Freedom Fighter</button>
+                <button type="submit" class="btn btn-default" id="autocomplete">Use Freedom Fighter</button>
             </div>
         </div>
     <!-- /.container -->

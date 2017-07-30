@@ -36,7 +36,7 @@ h1,h2,h3,p,label{
 }
 
 /* ------------ Form Styles ------------ */
-.transparent_form{
+#autocomplete, #autocomplete1{
     color: #FFF;
     background-color: #337BB5;
     border-bottom: 1px;
@@ -48,6 +48,15 @@ h1,h2,h3,p,label{
 .form-control{
     border:0;
     border-radius: 0px;
+}
+
+button{
+    color: #FFF;
+    background-color: #337BB5;
+    border-bottom: 1px;
+    border-bottom-color: #FFF;
+    border-style: solid;
+    box-shadow: none !important;
 }
 
 /* ------------ Other Styles ------------ */
