@@ -93,9 +93,44 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Page Content -->
+    <!-- Page Content -->   
     
-    <svg width="567px" height="809px" viewBox="0 0 567 809" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+               <img src="img/ff.png" style="width:20%;margin-bottom:60px;margin-top:20px;">
+                </div>
+            <div class="col-lg-12 text-center">
+                <img style="width:50%; height:100%;" src="img/busstop.png">
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <form class="form-inline" onkeypress="return event.keyCode != 13;">
+                    <div class="col-lg-6 col-lg-offset-3 text-center" style="margin-bottom: 15px; margin-top: 60px;">
+                    <div class="form-group">
+                        <label for="startLocation">I'm currently at:</label>
+                        <input type="startLocation" class="form-control transparent_form" id="autocomplete">
+                        </div>
+                  </div>
+                    <div class="col-lg-6 col-lg-offset-3 text-center" style="margin-bottom: 15px;">
+                  <div class="form-group">
+                        <label for="endLocation">I want to go to:</label>
+                        <input type="endLocation" class="form-control transparent_form" id="autocomplete1">
+                  </div>
+                    </div>
+                    <div class="col-lg-6 col-lg-offset-3 text-center" style="margin-bottom: 15px;">
+                    </div>
+                    <div class="col-lg-6 col-lg-offset-3 text-center" style="margin-bottom: 305px;">
+                  <button type="submit" class="btn btn-default" id="autocomplete" onclick="showMap(); return false;">Plan my journey</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+        <div style="display:none;"class="col-lg-12 text-center" id="infographic">
+            <h1 style="margin-bottom: 60px;">Your Infographic</h1>
+                <svg style="background-color:white;"width="567px" height="809px" viewBox="0 0 567 809" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
     <title>A4</title>
     <desc>Created with Sketch.</desc>
@@ -104,28 +139,28 @@
         <g id="A4">
             <rect id="Rectangle" stroke="#CECECE" transform="translate(512.608488, 34.199107) rotate(3.000000) translate(-512.608488, -34.199107) " x="470.116131" y="2.69338454" width="84.9847135" height="63.0114441" rx="1"></rect>
             <path d="M444.604974,59.358338 C441.153767,55.2672671 438.966589,50.0750899 438.645649,44.3840162 C436.542201,41.5208678 435.253491,37.6657606 435.253491,33.4253804 C435.253491,29.9635744 433.793554,22.8789712 435.253491,20.2608382 C436.713427,17.6427052 443.554467,17.4253804 447.753491,17.4253804 C450.008564,17.4253804 452.124164,18.1897387 453.950787,19.5270908 C457.06216,18.1750265 460.495851,17.4253804 464.10463,17.4253804 C466.920458,17.4253804 469.629687,17.8817827 472.162378,18.724647 C473.678264,17.888559 475.349189,17.4253804 477.10463,17.4253804 C481.303653,17.4253804 488.144694,17.6427052 489.60463,20.2608382 C491.064567,22.8789712 489.60463,29.9635744 489.60463,33.4253804 C489.60463,34.978264 489.431798,36.4794778 489.109413,37.8992253 C489.43424,39.5241775 489.60463,41.2048806 489.60463,42.9253804 C489.60463,53.3466618 483.353222,62.3078485 474.395865,66.2634817 C474.625969,66.4043151 474.933822,66.5363324 475.329716,66.6586354 C481.048667,68.4253804 482.332926,75.4029701 480.203978,76.5483731 C478.287607,77.579407 477.144588,71.5277709 474.667112,71.5277709 C475.575285,71.5277709 479.084119,77.2701382 479.084119,77.4697758 C479.084119,78.8623029 475.267595,80.4374428 474.667112,78.8623029 C474.06663,77.2871629 470.70705,70.7037439 472.288254,73.6907741 C473.753491,76.4587344 473.580006,78.3480578 473.753491,78.8623029 C473.926975,79.376548 473.156081,80.8918903 472.288254,80.8918903 C468.446061,80.8918903 467.395944,80.5111884 465.102981,76.9990683 C462.810017,73.4869481 465.102981,74.5821578 465.102981,70.6805807 C465.102981,70.0811167 464.943771,69.305394 464.688072,68.4188373 C464.494118,68.4231917 464.29963,68.4253804 464.10463,68.4253804 C463.635024,68.4253804 463.168383,68.4126863 462.705031,68.3876225 C462.160401,69.9501697 461.765651,71.3311236 461.765651,72.2750545 C461.765651,76.1766315 464.058614,75.0814219 461.765651,78.5935421 C459.472687,82.1056619 458.42257,82.4863639 454.580377,82.4863639 C453.71255,82.4863639 452.941656,80.9710218 453.11514,80.4567767 C453.288625,79.9425316 453.11514,78.0532082 454.580377,75.2852479 C456.161581,72.2982177 452.802001,78.8816367 452.201519,80.4567767 C451.601036,82.0319169 447.784512,80.4567767 447.784512,79.0642496 C447.784512,78.864612 451.293346,73.1222447 452.201519,73.1222447 C449.724043,73.1222447 448.581024,79.1738808 446.664653,78.1428469 C444.535705,76.9974439 445.819964,70.0198542 451.538915,68.2531092 C457.257865,66.4863641 444.60463,62.6924661 444.60463,59.5788762 C444.60463,59.5045085 444.604744,59.4309989 444.604974,59.358338 Z" id="Combined-Shape" stroke="#CECECE" transform="translate(462.429061, 49.955872) rotate(-13.000000) translate(-462.429061, -49.955872) "></path>
-            <text id="Put-me-on-your" fill="#CECECE" font-family="Futura-CondensedMedium, Futura" font-size="12" font-style="condensed" font-weight="500">
+            <text id="Put-me-on-your" fill="#CECECE" font-family="'Roboto', sans-serif" font-size="12" font-style="condensed" font-weight="500">
                 <tspan x="491.469975" y="32">Put me on your</tspan>
             </text>
-            <text id="fridge" fill="#CECECE" font-family="Futura-CondensedMedium, Futura" font-size="12" font-style="condensed" font-weight="500">
+            <text id="fridge" fill="#CECECE" font-family="'Roboto', sans-serif" font-size="12" font-style="condensed" font-weight="500">
                 <tspan x="509.267266" y="47">fridge</tspan>
             </text>
-            <text id="Hey-Ed," fill="#474747" font-family="Futura-Bold, Futura" font-size="40" font-weight="bold">
+            <text id="Hey-Ed," fill="#474747" font-family="'Roboto', sans-serif" font-size="40" font-weight="bold">
                 <tspan x="6" y="44">Hey Ed,</tspan>
             </text>
-            <text id="train" fill="#FFD700" font-family="Futura-Bold, Futura" font-size="40" font-weight="bold">
+            <text id="train" fill="#FFD700" font-family="'Roboto', sans-serif" font-size="40" font-weight="bold">
                 <tspan x="6" y="96">train</tspan>
             </text>
-            <text id="today?" fill="#474747" font-family="Futura-Bold, Futura" font-size="40" font-weight="bold">
+            <text id="today?" fill="#474747" font-family="'Roboto', sans-serif" font-size="40" font-weight="bold">
                 <tspan x="120" y="96">today?</tspan>
             </text>
-            <text id="Energy" fill="#CECECE" font-family="Futura-Bold, Futura" font-size="36" font-weight="bold">
+            <text id="Energy" fill="#CECECE" font-family="'Roboto', sans-serif" font-size="36" font-weight="bold">
                 <tspan x="6.0509143" y="165">Energy</tspan>
             </text>
-            <text id="Time" fill="#CECECE" font-family="Futura-Bold, Futura" font-size="36" font-weight="bold">
+            <text id="Time" fill="#CECECE" font-family="'Roboto', sans-serif" font-size="36" font-weight="bold">
                 <tspan x="5.1239429" y="460">Time</tspan>
             </text>
-            <text id="Money" fill="#CECECE" font-family="Futura-Bold, Futura" font-size="36" font-weight="bold">
+            <text id="Money" fill="#CECECE" font-family="'Roboto', sans-serif" font-size="36" font-weight="bold">
                 <tspan x="5.2714286" y="683">Money</tspan>
             </text>
             <text id="By-taking-public-transport,-you’re-saving-this-much!" fill="#474747" font-family="Helvetica-Bold, Helvetica" font-size="18" font-weight="bold">
@@ -136,10 +171,10 @@
                 <path d="M124.085056,18.992624 L91.6087527,18.992624 C90.2766061,18.5888137 90.8317873,15.4578507 90.8317873,14.5788549 C92.2282226,6.47441032 106.424652,0 122.591378,0 C138.758104,0 154.100265,6.9095521 154.100265,15.6095437 C154.100265,16.2238872 154.229467,18.992624 153.481977,18.992624 L124.085056,18.992624 Z M154.491615,25.2022144 C153.617281,25.1932555 93.5764071,25.0741648 91.3567249,25.2022144 C89.1370426,25.3302639 87.5752309,26.1657468 87.3885149,26.1657468 C87.0347847,26.0585214 86.7283925,25.9723511 87.3885149,24.8295784 C88.0486373,23.6868058 91.0376579,21.442971 93.2369027,21.4981194 C95.4361475,21.5532678 98.39007,22.0109822 99.6549358,22.0730758 C101.783837,22.1775858 102.948909,21.8862586 104.097339,21.7505149 C107.132535,21.3917569 109.052229,20.2372903 111.494884,20.2372903 C112.281727,20.2372903 118.094203,21.7505149 121.953602,21.7505149 C125.28881,21.7505149 130.748408,20.2372903 132.625824,20.2372903 C134.283238,20.2372903 138.326344,21.7585672 144.23076,22.0730758 C147.336988,22.2385343 150.298389,21.4643742 152.163229,21.4981194 C154.028069,21.5318646 155.319652,22.3428469 156.097167,23.0936686 C156.817992,23.7897469 157.947983,25.146561 158.006072,25.4837676 C158.064161,25.8209742 157.872074,26.1657468 157.749611,26.1657468 C157.279151,26.1657468 156.644594,25.4015745 154.491615,25.2022144 Z M90.7951761,26.8453851 L155.675328,26.8453851 C155.675328,26.8453851 156.45897,27.1871283 156.45897,27.8885889 C156.45897,28.5900495 155.675328,28.9578739 155.675328,28.9578739 L131.122167,28.9578739 C131.122167,28.9578739 130.654372,28.9578739 126.98741,29.8214388 C123.957943,30.6921312 123.889116,30.8500702 122.840528,31.2172781 C118.222949,32.8343207 116.774032,34.1865213 115.968846,34.4212437 C112.734356,35.3641396 114.963897,34.7890967 114.851028,34.7919389 C114.735568,34.7948463 114.373646,34.8985984 114.007664,34.7919389 C113.641683,34.6852794 113.08781,34.2990197 112.504438,33.9646899 C111.433752,33.3510815 109.293438,31.9456299 107.159485,31.0775986 C103.380833,29.5405509 105.394015,29.8754035 100.131435,29.2574343 C96.6832866,28.8525285 90.7951761,28.9578739 90.7951761,28.9578739 C90.7951761,28.9578739 89.8910415,28.9317927 89.8910415,27.8885889 C89.8910415,26.8453851 90.7951761,26.8453851 90.7951761,26.8453851 Z M90.7170533,41.491677 C90.7170533,41.491677 91.3782389,40.4835936 91.7656687,40.4773538 C92.1530985,40.4711141 153.696625,40.4773538 153.696625,40.4773538 C153.696625,40.4773538 154.332932,40.8440995 154.341971,41.2443443 C154.346989,41.4665375 154.462735,44.0448696 154.341971,46.3224934 C154.221208,48.6001172 150.795003,49.9552242 150.795003,49.9552242 L94.2482248,49.9552242 C94.2482248,49.9552242 90.7170533,48.8394791 90.7170533,46.5498113 L90.7170533,41.491677 Z M89.2648858,33.4837337 C88.9286839,32.1602383 90.271974,30.9043059 92.2528789,30.7503913 C92.2528789,30.7503913 95.6451975,30.0819919 102.314252,31.0873333 C108.983306,32.0926747 112.070432,36.0434044 114.729412,36.0434044 C116.98313,36.0434044 124.286827,31.5290462 129.35689,31.0873333 C134.426953,30.6456204 152.777518,31.0235948 152.777518,31.0235948 C154.772145,31.0587966 156.38911,32.6953036 156.38911,33.1280971 C156.38911,33.7472103 155.821053,34.4296092 155.821053,35.0487224 C155.821053,35.3685944 156.381639,36.6949629 156.38911,36.69479 C156.396581,36.6946171 156.38911,36.69479 156.38911,36.69479 C156.38911,37.2985558 154.781609,37.7880047 152.771437,37.7880047 L92.2738109,37.7880047 C90.2758255,37.7880047 88.6520545,36.1669298 88.6561383,35.4179018 C88.6561383,35.4179018 88.6468804,35.4746674 88.6561383,35.4179018 C88.6653963,35.3611361 89.3684641,34.6676234 89.3684641,34.1752215 C89.3684641,33.5923611 89.2648858,33.5851474 89.2648858,33.4837337 C89.2648858,33.3823199 89.2648858,33.4837337 89.2648858,33.4837337 Z" id="Combined-Shape-Copy"></path>
             </g>
             <text id="300-kJ" fill="#EC2525" font-family="Helvetica-Light, Helvetica" font-size="36" font-weight="300">
-                <tspan x="51.4702857" y="284">300 kJ</tspan>
+                <tspan x="51.4702857" y="284" id="energy_used">300 kJ</tspan>
             </text>
             <text id="10-litres" fill="#1CFF21" font-family="Helvetica-Light, Helvetica" font-size="36" font-weight="300">
-                <tspan x="41.3034286" y="366">10 litres</tspan>
+                <tspan x="41.3034286" y="366" id="fuel_used">10 litres</tspan>
             </text>
             <g id="airballoon" transform="translate(345.620178, 140.240649) rotate(-5.000000) translate(-345.620178, -140.240649) translate(291.620178, 33.240649)">
                 <path d="M40.5976225,125.213569 C17.2816215,115.246059 0,80.2758899 0,54.6585067 C0,24.490268 23.9670657,0.0340785024 53.5319396,0.0340785024 C83.0968134,0.0340785024 107.063879,24.490268 107.063879,54.6585067 C107.063879,80.3001274 89.7495407,115.31224 66.4000602,125.241793 L64.3091923,136 L42.7282048,136 L40.5976225,125.213569 Z" id="Combined-Shape" fill="#474747" fill-rule="nonzero"></path>
@@ -211,7 +246,7 @@
                 <tspan x="32.6233114" y="622">of Brisbane sights seen</tspan>
             </text>
             <text id="1" fill="#474747" font-family="Helvetica-Light, Helvetica" font-size="36" font-weight="300">
-                <tspan x="88.991714" y="504">1</tspan>
+                <tspan x="88.991714" y="504" id="events_av">1</tspan>
             </text>
             <text id="Tonnes" fill="#474747" font-family="Helvetica-Light, Helvetica" font-size="36" font-weight="300">
                 <tspan x="39.4562857" y="594">Tonnes</tspan>
@@ -240,7 +275,7 @@
             </g>
             <g id="Group-4" transform="translate(15.000000, 714.000000)">
                 <path d="M0,3.86983858 C0,3.86983858 13.426302,0.750831983 19.797275,0.750831983 C22.9893828,0.750831983 35.1670561,3.08846953 46.4413994,3.86983858 C57.7157427,4.65120763 68,3.86983858 68,3.86983858 L68,40.29841 C68,40.29841 58.3827374,41.336063 46.4413994,40.29841 C34.5000613,39.260757 26.8199665,36.5869609 19.797275,36.5869609 C3.44611168,36.5869609 0,40.29841 0,40.29841 L0,3.86983858 Z" id="Rectangle-9" fill="#474747" fill-rule="nonzero"></path>
-                <g id="$" transform="translate(27.000000, 8.000000)" font-size="20" font-family="Futura-Bold, Futura" fill="#FFFFFF" font-weight="bold">
+                <g id="$" transform="translate(27.000000, 8.000000)" font-size="20" font-family="'Roboto', sans-serif" fill="#FFFFFF" font-weight="bold">
                     <text>
                         <tspan x="0.1997143" y="21">$</tspan>
                     </text>
@@ -264,39 +299,7 @@
         </g>
     </g>
 </svg>
-    
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-               <img src="img/ff.png" style="width:20%;margin-bottom:60px;margin-top:20px;">
-                </div>
-            <div class="col-lg-12 text-center">
-                <img style="width:50%; height:100%;" src="img/busstop.png">
-            </div>
-            </div>
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <form class="form-inline" onkeypress="return event.keyCode != 13;">
-                    <div class="col-lg-6 col-lg-offset-3 text-center" style="margin-bottom: 15px; margin-top: 60px;">
-                    <div class="form-group">
-                        <label for="startLocation">I'm currently at:</label>
-                        <input type="startLocation" class="form-control transparent_form" id="autocomplete">
-                        </div>
-                  </div>
-                    <div class="col-lg-6 col-lg-offset-3 text-center" style="margin-bottom: 15px;">
-                  <div class="form-group">
-                        <label for="endLocation">I want to go to:</label>
-                        <input type="endLocation" class="form-control transparent_form" id="autocomplete1">
-                  </div>
-                    </div>
-                    <div class="col-lg-6 col-lg-offset-3 text-center" style="margin-bottom: 15px;">
-                    </div>
-                    <div class="col-lg-6 col-lg-offset-3 text-center" style="margin-bottom: 305px;">
-                  <button type="submit" class="btn btn-default" id="autocomplete" onclick="showMap(); return false;">Plan my journey</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+            </div></div>
         <div id="mapCanvas">
           <img src="https://media.giphy.com/media/1Ujr5kKotT8SQ/giphy.gif" id="loading-image" style="display: none;"><br>
           <!--The driving distance is <b><span id="driving_dist"> metres</b> and time is <b><span id="driving_time"> seconds</b>.<br>
@@ -349,17 +352,26 @@ function showMap() {
           document.getElementById("loading-image").style.display = "none";
           var response = JSON.parse(xmlhttp.responseText);
           //DISTANCE FOR TRAVEL MODES
-          document.getElementById("driving_dist").innerHTML = response.driving_dist;
-          document.getElementById("cycling_dist").innerHTML = response.cycling_dist;
-          document.getElementById("walking_dist").innerHTML = response.walking_dist;
-          document.getElementById("bus_dist").innerHTML = response.bus_dist;
-          document.getElementById("train_dist").innerHTML = response.train_dist;
+          var driving_dist = response.driving_dist;
+          var cycling_dist = response.cycling_dist;
+          var walking_dist = response.walking_dist;
+          var bus_dist = response.bus_dist;
+          var train_dist = response.train_dist;
           //TIME FOR TRAVEL MODES
-          document.getElementById("driving_time").innerHTML = response.driving_time;
-          document.getElementById("cycling_time").innerHTML = response.cycling_time;
-          document.getElementById("walking_time").innerHTML = response.walking_time;
-          document.getElementById("bus_time").innerHTML = response.bus_time;
-          document.getElementById("train_time").innerHTML = response.train_time;
+          var driving_time = response.driving_time;
+          var cycling_time = response.cycling_time;
+          var walking_time = response.walking_time;
+          var bus_time = response.bus_time;
+          var train_time = response.train_time;
+          var events_avoid = Math.floor(Math.random() * (5 - 1 + 1) + 1);
+          document.getElementById("events_av").innerHTML = events_avoid;
+          var energy_used = Math.ceil(2.924 * walking_time/60);
+          energy_used = String(energy_used) + " kJ"; 
+          document.getElementById("energy_used").innerHTML = energy_used;
+          var fuel_used = Math.ceil(driving_time/60 * 0.116);
+          document.getElementById("fuel_used").innerHTML = fuel_used;
+          document.getElementsById("infographic").style.display="block";
+          
           //Build Map using iframe
           var startLocation = document.getElementById("autocomplete").value;
           var endLocation = document.getElementById("autocomplete1").value;
